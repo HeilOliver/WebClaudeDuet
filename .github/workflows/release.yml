@@ -1,0 +1,61 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Get version from tag
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+
+      - name: Update manifest version
+        run: |
+          VERSION=${{ steps.get_version.outputs.VERSION }}
+          sed -i "s/\"version\": \".*\"/\"version\": \"$VERSION\"/" manifest.json
+          cat manifest.json
+
+      - name: Create extension ZIP
+        run: |
+          zip -r WebClaudeDuet-v${{ steps.get_version.outputs.VERSION }}.zip \
+            manifest.json \
+            content.js \
+            content.css \
+            background.js \
+            popup.html \
+            popup.js \
+            popup.css \
+            icons/ \
+            privacy-policy.html
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release v${{ steps.get_version.outputs.VERSION }}
+          body: |
+            ## Voice Input for Claude v${{ steps.get_version.outputs.VERSION }}
+
+            ### Installation
+            1. Download `WebClaudeDuet-v${{ steps.get_version.outputs.VERSION }}.zip`
+            2. Extract the ZIP file
+            3. Open Chrome and go to `chrome://extensions`
+            4. Enable Developer mode
+            5. Click "Load unpacked" and select the extracted folder
+
+            ### Setup
+            1. Click the extension icon and enter your OpenAI API key
+            2. Go to claude.ai and click the microphone button to start!
+          files: WebClaudeDuet-v${{ steps.get_version.outputs.VERSION }}.zip
+          draft: false
+          prerelease: false
