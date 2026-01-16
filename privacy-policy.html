@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Voice Input for Claude</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fafafa;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 48px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      color: #111;
+    }
+    .updated {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 32px;
+    }
+    h2 {
+      font-size: 18px;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: #222;
+    }
+    p, ul {
+      margin-bottom: 16px;
+      color: #444;
+    }
+    ul {
+      padding-left: 24px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    a {
+      color: #c96442;
+    }
+    .highlight {
+      background: #f0fdf4;
+      border-left: 3px solid #22c55e;
+      padding: 16px;
+      margin: 24px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .highlight p {
+      margin: 0;
+      color: #166534;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: January 2025</p>
+
+    <p>This privacy policy describes how the "Voice Input for Claude" Chrome extension ("the Extension") handles your data.</p>
+
+    <div class="highlight">
+      <p><strong>Summary:</strong> We do not collect, store, or transmit any of your personal data to our servers. All data stays on your device or is sent directly to OpenAI for transcription.</p>
+    </div>
+
+    <h2>Data Collection</h2>
+    <p>The Extension does not collect any personal information. Specifically:</p>
+    <ul>
+      <li>We do not collect analytics or usage data</li>
+      <li>We do not track your browsing activity</li>
+      <li>We do not collect your conversations with Claude</li>
+      <li>We do not have any servers that receive your data</li>
+    </ul>
+
+    <h2>Data Storage</h2>
+    <p>The Extension stores the following data locally on your device using Chrome's built-in storage API:</p>
+    <ul>
+      <li><strong>OpenAI API Key:</strong> Your API key is stored locally in Chrome's sync storage to enable voice transcription. This key is never transmitted to any server other than OpenAI's API.</li>
+    </ul>
+
+    <h2>Audio Recording</h2>
+    <p>When you use the voice input feature:</p>
+    <ul>
+      <li>Audio is recorded temporarily in your browser's memory</li>
+      <li>The audio is sent directly from your browser to OpenAI's Whisper API for transcription</li>
+      <li>Audio data is not stored permanently and is discarded after transcription</li>
+      <li>We do not have access to your audio recordings</li>
+    </ul>
+
+    <h2>Third-Party Services</h2>
+    <p>The Extension uses the following third-party service:</p>
+    <ul>
+      <li><strong>OpenAI Whisper API:</strong> Your audio recordings are sent to OpenAI for transcription. OpenAI's privacy policy applies to this data processing. You can review OpenAI's privacy policy at <a href="https://openai.com/privacy" target="_blank">openai.com/privacy</a>.</li>
+    </ul>
+
+    <h2>Permissions</h2>
+    <p>The Extension requests the following permissions:</p>
+    <ul>
+      <li><strong>storage:</strong> To save your OpenAI API key locally</li>
+      <li><strong>activeTab:</strong> To inject the microphone button into the Claude interface</li>
+      <li><strong>Host permission (claude.ai):</strong> To operate on the Claude website</li>
+      <li><strong>Microphone (requested at runtime):</strong> To record your voice for transcription</li>
+    </ul>
+
+    <h2>Data Security</h2>
+    <p>Your API key is stored using Chrome's secure storage API. We recommend:</p>
+    <ul>
+      <li>Using an API key with appropriate usage limits</li>
+      <li>Monitoring your OpenAI API usage dashboard</li>
+      <li>Revoking and replacing your key if you suspect unauthorized access</li>
+    </ul>
+
+    <h2>Children's Privacy</h2>
+    <p>The Extension is not intended for use by children under 13 years of age.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. Any changes will be reflected in the "Last updated" date above.</p>
+
+    <h2>Contact</h2>
+    <p>If you have questions about this privacy policy, please open an issue on our GitHub repository or contact us through the Chrome Web Store listing.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE/Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Claude Code
+.claude/
+
+# Build artifacts
+*.zip
+*.crx
+*.pem
+
+# Node (if adding build tools later)
+node_modules/
+npm-debug.log
+
+# Local development
+.env
+.env.local

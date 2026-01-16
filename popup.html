@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Input Settings</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Voice Input for Claude</h1>
+    <p class="description">Configure your OpenAI API key to enable voice-to-text transcription.</p>
+
+    <div class="form-group">
+      <label for="apiKey">OpenAI API Key</label>
+      <input
+        type="password"
+        id="apiKey"
+        placeholder="sk-..."
+        autocomplete="off"
+      >
+      <button type="button" id="toggleVisibility" class="toggle-btn" title="Show/hide API key">
+        <svg id="eyeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </button>
+    </div>
+
+    <button id="saveBtn" class="save-btn">Save API Key</button>
+
+    <div id="status" class="status"></div>
+
+    <div class="footer">
+      <p>Get your API key from <a href="https://platform.openai.com/api-keys" target="_blank">OpenAI Dashboard</a></p>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
